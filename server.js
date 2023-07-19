@@ -3,6 +3,7 @@ const express = require('express');
 const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override');
 const {MongoClient} = require('mongodb');
+const { classEngraving, battleEngravings } = require('./config/app');
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -30,3 +31,11 @@ connectDB();
 app.listen(process.env.PORT, () =>{
     console.log('Test Build Online')
 });
+
+
+// Array Options
+
+app.get('/get-options', async(req, res) => {
+    const allEngravings = classEngraving.concat(battleEngravings);
+    res.json(allEngravings);
+})
