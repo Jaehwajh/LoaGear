@@ -12,7 +12,7 @@ const mongoose = require('mongoose');
 // const engravinglist = [''];
 
 const AccessoriesSchema = new mongoose.Schema({
-    accessory: {
+    accessoryType: {
         type: String,
         // enum: accessoryType,
         required: true,
@@ -63,7 +63,7 @@ const AccessoriesSchema = new mongoose.Schema({
         type: String,
         // enum: classType, 
         required: true,
-    }
+    },
 });
 
 module.exports = mongoose.model('Accessories', AccessoriesSchema);
