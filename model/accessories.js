@@ -14,22 +14,26 @@ const mongoose = require('mongoose');
 const AccessoriesSchema = new mongoose.Schema({
     accessory: {
         type: String,
-        enum: accessoryType,
+        // enum: accessoryType,
         required: true,
     },
     rarity:{
         type: String,
-        enum: rarityType,
+        // enum: rarityType,
+        required: true,
+    },
+    quality: {
+        type: Number,
         required: true,
     },
     primaryStats: {
         type: String,
-        enum: statType,
+        // enum: statType,
         required: true,
     },
     secondaryStats: {
         type: String,
-        enum: statType,
+        // enum: statType,
     },
     primaryEngraving: {
         type: String,
