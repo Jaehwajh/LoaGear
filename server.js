@@ -3,7 +3,7 @@ const express = require('express');
 const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override');
 const {MongoClient} = require('mongodb');
-const { classEngraving, battleEngravings } = require('./config/app');
+const { classEngraving, battleEngravings } = require('./config/accessories');
 const app = express();
 
 app.set('view engine', 'ejs');

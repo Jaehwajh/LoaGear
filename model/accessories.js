@@ -47,6 +47,14 @@ const AccessoriesSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    negativeEngraving: {
+        type: String,
+        required: true,
+    },
+    negativeEngravingNode: {
+        type: Number,
+        required: true,
+    },
     characterName: {
         type: String,
         // enum: classType, 

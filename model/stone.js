@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 
 const StoneSchema =  new mongoose.Schema({
-    primarEngraving: {
+    primaryEngraving: {
         type: String,
         required: true,
     },
     secondaryEngraving: {
+        type: String,
+        required: true,
+    },
+    negativeEngraving: {
         type: String,
         required: true,
     },
