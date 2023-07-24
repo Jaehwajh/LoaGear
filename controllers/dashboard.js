@@ -2,6 +2,11 @@ const Accessories = require("../model/accessories");
 const Stones = require('../model/stone');
 
 module.exports = {
+    getDashboard: async(req, res) => {
+        try{
+            const acc = await Accessories.find({ })
+        }
+    },
     createAccessories: async(req, res) =>{
         try{
             await Accessories.create({
