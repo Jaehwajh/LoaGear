@@ -12,9 +12,9 @@ const mongoose = require('mongoose');
 // const engravinglist = [''];
 
 const AccessoriesSchema = new mongoose.Schema({
-    acessory:{
+    user:{
         type: Schema.Types.ObjectId,
-        ref: 'Accessory',
+        ref: 'User',
     },
     accessoryType: {
         type: String,

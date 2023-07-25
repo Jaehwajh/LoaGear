@@ -4,7 +4,10 @@ const Stones = require('../model/stone');
 module.exports = {
     getDashboard: async(req, res) => {
         try{
-            const acc = await Accessories.find({ })
+            const gear = await Accessories.find({ user: req.user.id });
+            res.render("dashboard.ejs", { user: req.user, accessories: gear, stones: gear});
+        }catch(err){
+            console.log(err);
         }
     },
     createAccessories: async(req, res) =>{
