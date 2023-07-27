@@ -3,14 +3,23 @@ const express = require('express');
 const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override');
 const {MongoClient} = require('mongodb');
-const { classEngraving, battleEngravings } = require('./config/accessories');
+const passport = require('passport');
+const session = require('express-session');
+const flash = require('express-flash');
+const { classEngraving, battleEngravings } = require('./config/properties');
 const app = express();
+
+require("./config/passport")(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '../public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+
+app.use(flash());
 
 require('dotenv').config()
 
