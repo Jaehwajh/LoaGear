@@ -1,73 +1,61 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// const classType = ['Berserker', 'Destroyer', 'Gunlancer', 'Paladin', 'Slayer', 'Sorceress', 'Bard',
-// 'Arcana', 'Summoner', 'Wardancer', 'Scrapper', 'Soulfist', 'Glaivier', 'Striker', 'Sharpshooter',
-// 'Deadeye', 'Machinist', 'Artillerist', 'Gunslinger', 'Shadowhunter', 'Deathblade', 'Reaper', 'Artist',
-// 'Aeromancer', 'Souleater' ];
-
-// const statType = ['Crit', 'Specialization', 'Swiftness', 'Endurance', 'Domination', 'Expertise'];
-// const accessoryType = ['Earring', 'Ring', 'Necklace'];
-// const rarityType = ['Legendary', 'Relic', 'Ancient'];
-
-// const engravinglist = [''];
-
-const AccessoriesSchema = new mongoose.Schema({
-    user:{
+const accessoriesSchema = new mongoose.Schema({
+    user: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: "User"
     },
-    accessoryType: {
-        type: String,
-        // enum: accessoryType,
-        required: true,
+    type: {
+        type: Schema.Types.ObjectId,
+        ref: "Type"
     },
-    rarity:{
-        type: String,
-        // enum: rarityType,
-        required: true,
+    rarity: {
+        type: Schema.Types.ObjectId,
+        ref: "Rarity"
     },
     quality: {
         type: Number,
-        required: true,
+        required: true
     },
-    primaryStats: {
+    stats1: {
         type: String,
-        // enum: statType,
-        required: true,
+        required: true
     },
-    secondaryStats: {
+    stats2: {
         type: String,
-        // enum: statType,
+        required: true
     },
-    primaryEngraving: {
-        type: String,
+    engraving1: {
+        type: Schema.Types.ObjectId,
         required: true,
+        ref:"Engraving1"
     },
-    primaryEngravingNodes: {
+    value1: {
         type: Number,
-        required: true,
+        required: true
     },
-    secondaryEngraving: {
-        type: String,
+    engraving2: {
+        type: Schema.Types.ObjectId,
         required: true,
+        ref: "Engraving2"
     },
-    secondaryEngravingNode: {
+    value2: {
         type: Number,
-        required: true,
+        required: true
     },
-    negativeEngraving: {
-        type: String,
+    negative: {
+        type: Schema.Types.ObjectId,
         required: true,
+        ref: "Negative"
     },
-    negativeEngravingNode: {
+    negValue: {
         type: Number,
-        required: true,
+        required: true
     },
-    characterName: {
+    character: {
         type: String,
-        // enum: classType, 
-        required: true,
-    },
+        required: true
+    }
 });
 
-module.exports = mongoose.model('Accessories', AccessoriesSchema);
+module.exports = mongoose.model("Accessories", accessoriesSchema);

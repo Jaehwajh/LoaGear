@@ -1,5 +1,6 @@
 const Accessories = require("../model/accessories");
 const Stones = require('../model/stone');
+const Bracelet = requrie("../model/bracelet");
 
 module.exports = {
     getDashboard: async(req, res) => {

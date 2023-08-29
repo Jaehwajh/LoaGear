@@ -1,22 +1,29 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const StoneSchema =  new mongoose.Schema({
-    primaryEngraving: {
-        type: String,
-        required: true,
+const stoneSchema = new mongoose.Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     },
-    secondaryEngraving: {
-        type: String,
+    engraving1: {
+        type: Schema.Types.ObjectId,
         required: true,
+        ref:"Engraving1"
     },
-    negativeEngraving: {
-        type: String,
+    engraving2: {
+        type: Schema.Types.ObjectId,
         required: true,
+        ref: "Engraving2"
     },
-    characterName: {
-        type: String,
+    negative: {
+        type: Schema.Types.ObjectId,
         required: true,
+        ref: "Negative"
     },
+    character: {
+        type: String,
+        required: true
+    }
 });
 
-module.exports = mongoose.model('Stone', StoneSchema);
+module.exports = mongoose.model("Stone", stoneSchema);
