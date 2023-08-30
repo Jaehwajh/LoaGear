@@ -14,18 +14,18 @@ module.exports = {
     createAccessories: async(req, res) =>{
         try{
             await Accessories.create({
-                accessoryType: req.body.accessoryType,
-                rarity:     req.body.rarity,
-                quality:    req.body.quality,
-                primaryStats:   req.body.primaryStats,
-                secondaryStats: req.body.secondaryStats,
-                primaryEngraving:   req.body.primaryEngraving,
-                primaryEngravingNode:   req.body.primaryEngravingNode,
-                secondaryEngraving:    req.body.secondaryEngraving,
-                secondaryEngravingNode:    req.body.secondaryEngravingNode,
-                negativeEngraving:  req.body.negativeEngraving,
-                negativeEngravingNode:  req.body.negativeEngravingNode,
-                characterName:  req.body.characterName,
+                type: req.body.accType,
+                rarity: req.body.rarity,
+                quality: req.body.quality,
+                stats1: req.body.primaryStats,
+                stats2: req.body.secondaryStats,
+                engraving1: req.body.primaryEngraving,
+                value1: req.body.node1,
+                engraving2: req.body.secondaryEngraving,
+                value2: req.body.node2,
+                negative: req.body.negativeEngraving,
+                negValue: req.body.negativeNode,
+                character: req.body.characterName,
             });
             console.log("Accessory Saved");
             res.redirect("/dashboard");
