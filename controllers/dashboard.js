@@ -1,12 +1,14 @@
 const Accessories = require("../model/accessories");
 const Stones = require('../model/stone');
-const Bracelet = requrie("../model/bracelet");
+const Bracelet = require("../model/bracelet");
 
 module.exports = {
     getDashboard: async(req, res) => {
         try{
-            const gear = await Accessories.find({ user: req.user.id });
-            res.render("dashboard.ejs", { user: req.user, accessories: gear, stones: gear});
+            const acc = await Accessories.find({ user: req.user.id });
+            const rock = await Stones.find({ user: req.user.id });
+            const brace = await Bracelet.find({ user: req.user.id });
+            res.render("dashboard.ejs", { user: req.user, accessories: acc, stones: rock, bracelet: brace});
         }catch(err){
             console.log(err);
         }
@@ -76,6 +78,15 @@ module.exports = {
                 properties5: req.body.braceletProp5,
             });
             console.log("Bracelet Saved!");
+            res.redirect("/dashboard");
+        }catch(err){
+            res.redirect("/dashboard");
+        }
+    },
+    deleteBracelet: async(req, res) => {
+        try{
+            await Bracelet.findByIdAndRemove({ _id: req.params.id });
+            console.log("Bracelet Deleted");
             res.redirect("/dashboard");
         }catch(err){
             res.redirect("/dashboard");
