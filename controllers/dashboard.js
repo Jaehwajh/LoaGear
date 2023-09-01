@@ -45,10 +45,10 @@ module.exports = {
     createStones: async(req, res) => {
         try{
             await Stones.create({
-                primaryEngraving: req.body.stonePEngraving,
-                secondaryEngraving: req.body.stoneSEngraving,
-                negativeEngraving: req.body.stoneNEngraving,
-                characterName: req.body.characterName,
+                engraving1: req.body.stonePEngraving,
+                engraving2: req.body.stoneSEngraving,
+                negative: req.body.stoneNEngraving,
+                character: req.body.characterName,
             });
             console.log("Stone Saved!");
             res.redirect("/dashboard");
@@ -65,4 +65,20 @@ module.exports = {
             res.redirect("/dashboard");
         }
     },
+    createBracelet: async(req, res) => {
+        try{
+            await Bracelet.create({
+                rarity: req.body.braceletRarity,
+                properties1: req.body.braceletProp1,
+                properties2: req.body.braceletProp2,
+                properties3: req.body.braceletProp3,
+                properties4: req.body.braceletProp4,
+                properties5: req.body.braceletProp5,
+            });
+            console.log("Bracelet Saved!");
+            res.redirect("/dashboard");
+        }catch(err){
+            res.redirect("/dashboard");
+        }
+    }
 };
