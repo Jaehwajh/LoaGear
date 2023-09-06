@@ -1,3 +1,61 @@
 <%- include("partials/header.ejs") -%>
-    
+    <div class="container">
+        <div class="dashboard-container">
+            <div class="gear-list">
+                
+            </div>
+
+            <button class="add-gear"></button>
+
+            <div class="modal">
+                <form action="/dashboard/createAccessories" method="POST">
+                    <div>
+                        <label for="type">Accessory Type</label>
+                        <input type="text" name="type" id="type" placeholder="Accessory Type">
+                    </div>
+
+                    <div>
+                        <label for="rarity">Accessory Rarity</label>
+                        <input type="text" name="rarity" id="rarity" placeholder="Rarity">
+                    </div>
+
+                    <div>
+                        <label for="quality">Accesory Quality</label>
+                        <input type="text" name="quality" id="quality" placeholder="Quality">
+                    </div>
+
+                    <div>
+                        <label for="stats1">Primary Stats</label>
+                        <input type="text" name="primaryStats" id="stats1" placeholder="Primary Stats">
+                    </div>
+
+                    <div>
+                        <label for="stats2">Secondary Stats</label>
+                        <input type="text" name="secondaryStats" id="stats2" placeholder="Secondary Stats">
+                    </div>
+
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+
+                    <div>
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 <%- include("partials/footer.ejs") -%>
