@@ -1,12 +1,9 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const MongoStore = require('connect-mongo');
 const methodOverride = require('method-override');
-const {MongoClient} = require('mongodb');
 const passport = require('passport');
 const session = require('express-session');
 const flash = require('express-flash');
-const { classEngraving, battleEngravings } = require('./config/properties');
 const app = express();
 
 require("./config/passport")(passport);
@@ -27,14 +24,16 @@ const client = new MongoClient(process.env.DB_STRING);
 
 const connectDB = async() => {
     try{
-        await client.connect();
+        await mongoose.connect(client, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
         console.log(`MongoDB Connected!`);
     }catch(err){
         console.log(err);
         process.exit(1);
     }
 };
-
 connectDB();
 
 app.listen(process.env.PORT, () =>{
@@ -42,4 +41,3 @@ app.listen(process.env.PORT, () =>{
 });
 
 
-// Array Options
