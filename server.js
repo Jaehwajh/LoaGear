@@ -13,8 +13,8 @@ require("./config/passport")(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.set("view engine", "ejs");
 app.use(express.static(__dirname + '../public'));
+app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -43,15 +43,3 @@ app.listen(process.env.PORT, () =>{
 
 
 // Array Options
-
-app.get('/get-options', async(req, res) => {
-    const allEngravings = classEngraving.concat(battleEngravings);
-    res.json(allEngravings);
-});
-
-app.post('/save-option', async(req, res) => {
-    const { selectedOptions } = req.body;
-    try{
-        
-    }
-})
