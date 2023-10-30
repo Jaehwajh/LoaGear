@@ -6,8 +6,8 @@ const braceletSchema = new mongoose.Schema({
         ref: "User"
     },
     rarity: {
-        type: Schema.Types.ObjectId,
-        ref: "Rarity"
+        type: String,
+        required: true
     },
     properties1: {
         type: String,

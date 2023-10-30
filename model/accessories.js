@@ -5,7 +5,46 @@ const accessoriesSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-
+    accType: {
+        type: String,
+        required: true
+    },
+    accRarity: {
+        type: String,
+        required: true
+    },
+    accQuality: {
+        type: Number,
+        required: true
+    },
+    engravingOne: {
+        type: String,
+        required: true
+    },
+    engravingOneNode: {
+        type: Number,
+        required: true
+    },
+    engravingTwo: {
+        type: String,
+        required: true
+    },
+    engravingTwoNode: {
+        type: Number,
+        required: true
+    },
+    negativeEngraving: {
+        type: String,
+        required: true
+    },
+    negativeNode: {
+        type: Number,
+        required: true
+    },
+    character:{
+        type: String,
+        required: true
+    }
 });
 
 module.exports = mongoose.model("Accessories", accessoriesSchema);

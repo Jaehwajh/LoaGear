@@ -5,20 +5,17 @@ const stoneSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    engraving1: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref:"Engraving1"
+    engravingOne: {
+        type: String,
+        required: true
     },
-    engraving2: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: "Engraving2"
+    engravingTwo: {
+        type: String,
+        required: true
     },
-    negative: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: "Negative"
+    negativeEngraving: {
+        type: String,
+        required: true
     },
     character: {
         type: String,
