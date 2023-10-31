@@ -31,4 +31,4 @@ const braceletSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model("bracelet", braceletSchema);
+module.exports = mongoose.model("Bracelet", braceletSchema);

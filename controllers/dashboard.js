@@ -2,6 +2,16 @@ const Accessories = require("../model/accessories");
 const Stones = require('../model/stone');
 const Bracelet = require("../model/bracelet");
 
+// Engravings
+const bEngravings = require("../config/AccEngraving/battleEngraving");
+const cEngravings = require("../config/AccEngraving/classEngraving");
+const nEngravings = require("../config/AccEngraving/negativeEngraving");
+
+// Accessory Properties
+const rarity = require("../config/AccProperties/accRarity");
+const stats = require("../config/AccProperties/accStats");
+const type = require("../config/AccProperties/accType");
+
 module.exports = {
     getDashboard: async(req, res) => {
         try{
