@@ -27,17 +27,19 @@ module.exports = {
         try{
             await Accessories.create({
                 type: req.body.accType,
-                rarity: req.body.rarity,
-                quality: req.body.quality,
-                stats1: req.body.primaryStats,
-                stats2: req.body.secondaryStats,
-                engraving1: req.body.primaryEngraving,
-                value1: req.body.node1,
-                engraving2: req.body.secondaryEngraving,
-                value2: req.body.node2,
+                rarity: req.body.accRarity,
+                quality: req.body.accQuality,
+                stats1: req.body.statsOne,
+                stats1Value: req.body.statsOneValue,
+                stats2: req.body.statsTwo,
+                stats2Value: req.body.statsTwoValue,
+                engraving1: req.body.engravingOne,
+                node1: req.body.engravingsNodeOne,
+                engraving2: req.body.engravingTwo,
+                node2: req.body.engravingTwoNode,
                 negative: req.body.negativeEngraving,
                 negValue: req.body.negativeNode,
-                character: req.body.characterName,
+                character: req.body.character,
             });
             console.log("Accessory Saved");
             res.redirect("/dashboard");

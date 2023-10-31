@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const accessoriesSchema = new mongoose.Schema({
     user: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.ObjectId, 
         ref: "User"
     },
     accType: {
@@ -16,6 +16,20 @@ const accessoriesSchema = new mongoose.Schema({
     accQuality: {
         type: Number,
         required: true
+    },
+    statsOne: {
+        type: String,
+        required: true
+    },
+    statsOneValue:{
+        type: Number,
+        required: true
+    },
+    statsTwo:{
+        type: String,
+    },
+    statsTwoValue:{
+        type: Number,
     },
     engravingOne: {
         type: String,

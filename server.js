@@ -6,6 +6,9 @@ const session = require('express-session');
 const flash = require('express-flash');
 const logger = require("morgan");
 const app = express();
+const MongoStore = require("connect-mongo");
+const mainRoutes = require("./routes/main");
+const dashboardRoutes = require("./routes/dashboard")
 
 //App view 
 app.use(express.static(__dirname + '/public'));
@@ -19,18 +22,20 @@ require("./config/passport")(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Use flash messages for errors
+app.use(flash());
+
 // Dot env config
 require('dotenv').config();
 
 // Database
-const database = process.env.DB;
+const database = process.env.DB_STRING;
 
 const connectDB = async() => {
     try{
         await mongoose.connect(database, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-            useFindAndModify: false,
         });
         console.log(`MongoDB Connected!`);
     }catch(err){
@@ -41,7 +46,22 @@ const connectDB = async() => {
 
 connectDB();
 
+//Sessions - stored in MongoDB
+app.use(
+    session({
+        secret: "keyboard cat",
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({ 
+            mongoUrl: database
+         }),
+    })
+);
+
 // app.use(flash());
 app.listen(process.env.PORT, () => {
     console.log("Test build online")
 });
+
+app.use("/", mainRoutes);
+app.use("/dashboard", dashboardRoutes);

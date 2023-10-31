@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const stoneSchema = new mongoose.Schema({
     user: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.ObjectId, 
         ref: "User"
     },
     engravingOne: {
