@@ -18,10 +18,6 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(methodOverride("_method"));
 
-require("./config/passport")(passport);
-app.use(passport.initialize());
-app.use(passport.session());
-
 //Use flash messages for errors
 app.use(flash());
 
@@ -57,6 +53,10 @@ app.use(
          }),
     })
 );
+
+require("./config/passport")(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // app.use(flash());
 app.listen(process.env.PORT, () => {
