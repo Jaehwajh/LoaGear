@@ -8,9 +8,9 @@ const cEngravings = require("../config/AccEngraving/classEngraving");
 const nEngravings = require("../config/AccEngraving/negativeEngraving");
 
 // Accessory Properties
-const rarity = require("../config/AccProperties/accRarity");
+const rarities = require("../config/AccProperties/accRarity");
 const stats = require("../config/AccProperties/accStats");
-const type = require("../config/AccProperties/accType");
+const types = require("../config/AccProperties/accType");
 
 module.exports = {
     getDashboard: async(req, res) => {
@@ -23,9 +23,9 @@ module.exports = {
                  accessories: acc, 
                  stones: rock,
                  bracelet: brace, 
-                 rarity, 
+                 rarities, 
                  stats, 
-                 type, 
+                 types, 
                  bEngravings,
                  cEngravings,
                  nEngravings,
