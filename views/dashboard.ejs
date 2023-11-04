@@ -1,7 +1,43 @@
 <%- include("partials/header") -%>
 <div class="body">
 <div>
+    <div>
+        <form action="">
+            <div class="flex-column">
+                <label for="characterName">Character Name</label>
+                <input class="input" type="text" name="characterName" id="characterName" placeholder="">
+            </div>
     
+            <div class="flex-column">
+                <label for="loaClass">Class</label>
+                <select name="loaClass" id="loaClass" class="select class-select">
+                    <% loaClass.forEach(element => { %>
+                        <option value="<%- element.class %>"><%- element.class %></option>
+                    <% }); %>
+                </select>
+            </div>
+    
+            <div class="flex-column">
+                <label for="itemLevel">Item Level</label>
+                <input class="input" type="text" name="itemLevel" id="itemLevel" placeholder="">
+            </div>
+
+            <div class="flex-column">
+                <label for="roster">Roster</label>
+                <select class="select roster-select" name="roster" id="roster">
+                    <option value="Main">Main</option>
+                    <option value="Alt">Alt</option>
+                </select>
+            </div>
+    
+            <div>
+                <button class="custom-btn" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+    <div>
+
+    </div>
 </div>
 </div>
 <%- include("partials/footer") %>
