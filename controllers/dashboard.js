@@ -18,6 +18,9 @@ module.exports = {
             const acc = await Accessories.find({ user: req.user.id });
             const rock = await Stones.find({ user: req.user.id });
             const brace = await Bracelet.find({ user: req.user.id });
+
+            const firstEngraving = cEngravings.concat(bEngravings);
+
             res.render("dashboard.ejs", { 
                  user: req.user,
                  accessories: acc, 
@@ -25,7 +28,8 @@ module.exports = {
                  bracelet: brace, 
                  rarities, 
                  stats, 
-                 types, 
+                 types,
+                 firstEngraving,
                  bEngravings,
                  cEngravings,
                  nEngravings,

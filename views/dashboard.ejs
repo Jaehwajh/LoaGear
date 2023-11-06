@@ -1,98 +1,108 @@
 <%- include("partials/header") -%>
 <div class="body">
 <div>
+    <!-- Add accessory -->
     <div>
         <form action="">
+            <!-- Accessory -->
             <div class="flex-column">
                 <label for="accType">Accessory</label>
                 <select class="select" name="accType" id="accType">
                     <% types.forEach(element => { %>
-                        <option value="<%- element.type %>"><%- element.type %></option>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
             </div>
+            <!-- Rarity -->
             <div class="flex-column">
                 <label for="accRarity">Rarity</label>
                 <select name="accRarity" id="accRarity" class="select">
                     <% rarities.forEach(element => { %>
-                        <option value="<%- element.rarity %>"><%- element.rarity %></option>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
             </div>
+            <!-- Quality -->
             <div class="flex-column">
                 <label for="accQuality">Quality</label>
                 <input class="input" type="text" name="accQuality" id="accQuality" placeholder="">
             </div>
+            <!-- First Stats -->
             <div class="flex-column">
                 <div>
-                <label for="statsOne">Roster</label>
+                <label for="statsOne">Stats 1</label>
                 <select class="select" name="statsOne" id="statsOne">
-                    <% loaClass.forEach(element => { %>
-                        <option value="<%- element.class %>"><%- element.class %></option>
+                    <% stat.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
                 </div>
                 <div>
-                    <label for="statsOneValue">Item Level</label>
+                    <label for="statsOneValue">Value</label>
                     <input class="input" type="text" name="statsOneValue" id="statsOneValue" placeholder="">
                 </div>
             </div>
+            <!-- Secondary Stats -->
             <div class="flex-column">
                 <div>
-                <label for="statTwo">Roster</label>
+                <label for="statTwo">Stats 2</label>
                 <select class="select roster-select" name="statTwo" id="statTwo">
-                    <% loaClass.forEach(element => { %>
-                        <option value="<%- element.class %>"><%- element.class %></option>
+                    <% stat.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
                 </div>
                 <div>
-                    <label for="statTwoValue">Item Level</label>
+                    <label for="statTwoValue">Value</label>
                     <input class="input" type="text" name="statTwoValue" id="statTwoValue" placeholder="">
                 </div>
             </div>
+            <!-- First Engraving -->
             <div class="flex-column">
                 <div>
-                <label for="engravingOne">Roster</label>
+                <label for="engravingOne">Engraving 1</label>
                 <select class="select roster-select" name="engravingOne" id="engravingOne">
-                    <% loaClass.forEach(element => { %>
-                        <option value="<%- element.class %>"><%- element.class %></option>
+                    <% firstEngraving.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
                 </div>
                 <div>
-                    <label for="engravingOneNode">Item Level</label>
+                    <label for="engravingOneNode">Value</label>
                     <input class="input" type="text" name="engravingOneNode" id="engravingOneNode" placeholder="">
                 </div>
             </div>
+            <!-- Second Engraving -->
             <div class="flex-column">
                 <div>
-                <label for="engravingTwo">Roster</label>
+                <label for="engravingTwo">Engraving 2</label>
                 <select class="select roster-select" name="engravingTwo" id="engravingTwo">
-                    <% loaClass.forEach(element => { %>
-                        <option value="<%- element.class %>"><%- element.class %></option>
+                    <% bEngraving.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
                 </div>
                 <div>
-                    <label for="engravingTwoNode">Item Level</label>
+                    <label for="engravingTwoNode">Value</label>
                     <input class="input" type="text" name="engravingTwoNode" id="engravingTwoNode" placeholder="">
                 </div>
             </div>
+            <!-- Negative Engravings -->
             <div class="flex-column">
                 <div>
-                <label for="negativeEngraving">Roster</label>
+                <label for="negativeEngraving">Negative Engraving</label>
                 <select class="select roster-select" name="negativeEngraving" id="negativeEngraving">
-                    <% loaClass.forEach(element => { %>
-                        <option value="<%- element.class %>"><%- element.class %></option>
+                    <% nEngravings.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
                 </div>
                 <div>
-                    <label for="negativeEngravingNode">Item Level</label>
+                    <label for="negativeEngravingNode">Value</label>
                     <input class="input" type="text" name="negativeEngravingNode" id="negativeEngravingNode" placeholder="">
                 </div>
             </div>
+            <!-- Character Name -->
             <div class="flex-column">
                 <label for="character">Character Name</label>
                 <input class="input" type="text" name="character" id="character" placeholder="">
@@ -102,8 +112,56 @@
             </div>
         </form>
     </div>
+    <!-- Add stone -->
     <div>
+        <form action="">
+            <!-- First Engraving -->
+            <div class="flex-column">
+                <div>
+                <label for="engravingOne">Engraving 1</label>
+                <select class="select roster-select" name="engravingOne" id="engravingOne">
+                    <% bEngraving.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <!-- Second Engraving -->
+            <div class="flex-column">
+                <div>
+                <label for="engravingTwo">Engraving 2</label>
+                <select class="select roster-select" name="engravingTwo" id="engravingTwo">
+                    <% bEngraving.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
+                    <% }); %>
+                </select>
+                </div>
+            </div>
+            <!-- Negative Engravings -->
+            <div class="flex-column">
+                <div>
+                <label for="negativeEngraving">Negative Engraving</label>
+                <select class="select roster-select" name="negativeEngraving" id="negativeEngraving">
+                    <% nEngravings.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
+                    <% }); %>
+                </select>
+                </div>
+            </div>
+            <!-- Character Name -->
+            <div class="flex-column">
+                <label for="character">Character Name</label>
+                <input class="input" type="text" name="character" id="character" placeholder="">
+            </div>
+            <div>
+                <button class="custom-btn" type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+    <!-- Add bracelet -->
+    <div class="hidden">
+        <form action="">
 
+        </form>
     </div>
 </div>
 </div>
