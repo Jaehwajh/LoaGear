@@ -32,7 +32,7 @@
                 <div>
                 <label for="statsOne">Stats 1</label>
                 <select class="select" name="statsOne" id="statsOne">
-                    <% stat.forEach(element => { %>
+                    <% stats.forEach(element => { %>
                         <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
@@ -45,16 +45,17 @@
             <!-- Secondary Stats -->
             <div class="flex-column">
                 <div>
-                <label for="statTwo">Stats 2</label>
-                <select class="select roster-select" name="statTwo" id="statTwo">
-                    <% stat.forEach(element => { %>
+                <label for="statsTwo">Stats 2</label>
+                <select class="select roster-select" name="statsTwo" id="statsTwo">
+                        <option value="None">None</option>
+                    <% stats.forEach(element => { %>
                         <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
                 </div>
                 <div>
-                    <label for="statTwoValue">Value</label>
-                    <input class="input" type="text" name="statTwoValue" id="statTwoValue" placeholder="">
+                    <label for="statsTwoValue">Value</label>
+                    <input class="input" type="text" name="statsTwoValue" id="statTwoValue" placeholder="">
                 </div>
             </div>
             <!-- First Engraving -->
@@ -77,7 +78,7 @@
                 <div>
                 <label for="engravingTwo">Engraving 2</label>
                 <select class="select roster-select" name="engravingTwo" id="engravingTwo">
-                    <% bEngraving.forEach(element => { %>
+                    <% bEngravings.forEach(element => { %>
                         <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
@@ -98,8 +99,8 @@
                 </select>
                 </div>
                 <div>
-                    <label for="negativeEngravingNode">Value</label>
-                    <input class="input" type="text" name="negativeEngravingNode" id="negativeEngravingNode" placeholder="">
+                    <label for="negativeNode">Value</label>
+                    <input class="input" type="text" name="negativeNode" id="negativeNode" placeholder="">
                 </div>
             </div>
             <!-- Character Name -->
@@ -120,7 +121,7 @@
                 <div>
                 <label for="engravingOne">Engraving 1</label>
                 <select class="select roster-select" name="engravingOne" id="engravingOne">
-                    <% bEngraving.forEach(element => { %>
+                    <% bEngravings.forEach(element => { %>
                         <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>
@@ -130,7 +131,7 @@
                 <div>
                 <label for="engravingTwo">Engraving 2</label>
                 <select class="select roster-select" name="engravingTwo" id="engravingTwo">
-                    <% bEngraving.forEach(element => { %>
+                    <% bEngravings.forEach(element => { %>
                         <option value="<%- element %>"><%- element %></option>
                     <% }); %>
                 </select>

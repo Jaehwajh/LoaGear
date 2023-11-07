@@ -30,6 +30,7 @@ const accessoriesSchema = new mongoose.Schema({
     },
     statsTwoValue:{
         type: Number,
+        default: 0,
     },
     engravingOne: {
         type: String,

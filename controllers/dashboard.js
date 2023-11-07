@@ -15,17 +15,17 @@ const types = require("../config/AccProperties/accType");
 module.exports = {
     getDashboard: async(req, res) => {
         try{
-            const acc = await Accessories.find({ user: req.user.id });
-            const rock = await Stones.find({ user: req.user.id });
-            const brace = await Bracelet.find({ user: req.user.id });
+            const accessory = await Accessories.find({ user: req.user.id });
+            const stone = await Stones.find({ user: req.user.id });
+            const bracelets = await Bracelet.find({ user: req.user.id });
 
             const firstEngraving = cEngravings.concat(bEngravings);
 
             res.render("dashboard.ejs", { 
                  user: req.user,
-                 accessories: acc, 
-                 stones: rock,
-                 bracelet: brace, 
+                 accessories: accessory, 
+                 stones: stone,
+                 bracelet: bracelets, 
                  rarities, 
                  stats, 
                  types,
@@ -41,19 +41,19 @@ module.exports = {
     createAccessories: async(req, res) =>{
         try{
             await Accessories.create({
-                type: req.body.accType,
-                rarity: req.body.accRarity,
-                quality: req.body.accQuality,
-                stats1: req.body.statsOne,
-                stats1Value: req.body.statsOneValue,
-                stats2: req.body.statsTwo,
-                stats2Value: req.body.statsTwoValue,
-                engraving1: req.body.engravingOne,
-                node1: req.body.engravingsNodeOne,
-                engraving2: req.body.engravingTwo,
-                node2: req.body.engravingTwoNode,
-                negative: req.body.negativeEngraving,
-                negValue: req.body.negativeNode,
+                accType: req.body.accType,
+                accRarity: req.body.accRarity,
+                accQuality: req.body.accQuality,
+                statsOne: req.body.statsOne,
+                statsOneValue: req.body.statsOneValue,
+                statsTwo: req.body.statsTwo,
+                statsTwoValue: req.body.statsTwoValue,
+                engravingOne: req.body.engravingOne,
+                engravingOneNode: req.body.engravingOneNode,
+                engravingTwo: req.body.engravingTwo,
+                engravingTwoNode: req.body.engravingTwoNode,
+                negativeEngraving: req.body.negativeEngraving,
+                negativeNode: req.body.negativeNode,
                 character: req.body.character,
             });
             console.log("Accessory Saved");
