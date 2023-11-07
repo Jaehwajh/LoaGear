@@ -74,9 +74,9 @@ module.exports = {
     createStones: async(req, res) => {
         try{
             await Stones.create({
-                engraving1: req.body.stonePEngraving,
-                engraving2: req.body.stoneSEngraving,
-                negative: req.body.stoneNEngraving,
+                engravingOne: req.body.engravingOne,
+                engravingTwo: req.body.engravingTwo,
+                negativeEngraving: req.body.negativeEngraving,
                 character: req.body.characterName,
             });
             console.log("Stone Saved!");
