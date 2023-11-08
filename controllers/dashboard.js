@@ -13,7 +13,7 @@ const stats = require("../config/AccProperties/accStats");
 const types = require("../config/AccProperties/accType");
 
 module.exports = {
-    getDashboard: async(req, res) => {
+    getDashboard: async(req, res) => {  
         try{
             const accessory = await Accessories.find({ user: req.user.id });
             const stone = await Stones.find({ user: req.user.id });
@@ -23,9 +23,9 @@ module.exports = {
 
             res.render("dashboard.ejs", { 
                  user: req.user,
-                 accessories: accessory, 
-                 stones: stone,
-                 bracelet: bracelets, 
+                 accessory: accessory, 
+                 stone: stone,
+                 bracelets: bracelets, 
                  rarities, 
                  stats, 
                  types,
@@ -55,6 +55,7 @@ module.exports = {
                 negativeEngraving: req.body.negativeEngraving,
                 negativeNode: req.body.negativeNode,
                 character: req.body.character,
+                user: req.user.id
             });
             console.log("Accessory Saved");
             res.redirect("/dashboard");

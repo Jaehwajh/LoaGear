@@ -165,5 +165,15 @@
         </form>
     </div>
 </div>
+<!-- Display Accessories, stones, bracelets -->
+<div>
+    <div>
+    <% accessory.forEach(element => { %>
+        <div>
+            <p><%= element.accType %></p>
+        </div>
+    <% }) %>
+    </div>
+</div>
 </div>
 <%- include("partials/footer") %>
