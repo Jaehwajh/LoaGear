@@ -167,12 +167,38 @@
 </div>
 <!-- Display Accessories, stones, bracelets -->
 <div>
+    <!-- All -->
     <div>
     <% accessory.forEach(element => { %>
         <div>
-            <p><%= element.accType %></p>
+            <p><%= element.accRarity %> <%= element.accType %></p>
+            <p>Quality: <%= element.accQuality %></p>
+            <p><%= element.statsOne %> +<%= element.statsOneValue %></p> 
+            <% if(element.accType === "Necklace"){ %>
+                <p><%= element.statsTwo %> +<%= element.statsTwoValue %></p> 
+            <% } %>
+            <p>[<%= element.engravingOne %>] Node +<%= element.engravingOneNode %></p>
+            <p>[<%= element.engravingTwo %>] Node +<%= element.engravingTwoNode %></p>
+            <p>[<%= element.negativeEngraving %>] Node +<%= element.negativeNode %></p>
+            <span><%= element.character %></span>
+            <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
         </div>
     <% }) %>
+    </div>
+    <div>
+        <% stone.forEach(element => { %>
+            <div>
+                <p><%= element.engravingOne %></p>
+                <p><%= element.engravingTwo %></p>
+                <p><%= element.negativeEngraving %></p>
+                <span><%= element.character %></span>
+                <form action="/dashboard/deleteStone/<%= element._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }) %>
     </div>
 </div>
 </div>

@@ -78,7 +78,8 @@ module.exports = {
                 engravingOne: req.body.engravingOne,
                 engravingTwo: req.body.engravingTwo,
                 negativeEngraving: req.body.negativeEngraving,
-                character: req.body.characterName,
+                character: req.body.character,
+                user: req.user.id
             });
             console.log("Stone Saved!");
             res.redirect("/dashboard");
