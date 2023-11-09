@@ -167,39 +167,90 @@
 </div>
 <!-- Display Accessories, stones, bracelets -->
 <div>
-    <!-- All -->
-    <div>
-    <% accessory.forEach(element => { %>
-        <div>
-            <p><%= element.accRarity %> <%= element.accType %></p>
-            <p>Quality: <%= element.accQuality %></p>
-            <p><%= element.statsOne %> +<%= element.statsOneValue %></p> 
-            <% if(element.accType === "Necklace"){ %>
-                <p><%= element.statsTwo %> +<%= element.statsTwoValue %></p> 
-            <% } %>
-            <p>[<%= element.engravingOne %>] Node +<%= element.engravingOneNode %></p>
-            <p>[<%= element.engravingTwo %>] Node +<%= element.engravingTwoNode %></p>
-            <p>[<%= element.negativeEngraving %>] Node +<%= element.negativeNode %></p>
-            <span><%= element.character %></span>
-            <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete</button>
-            </form>
-        </div>
-    <% }) %>
-    </div>
-    <div>
-        <% stone.forEach(element => { %>
-            <div>
-                <p><%= element.engravingOne %></p>
-                <p><%= element.engravingTwo %></p>
-                <p><%= element.negativeEngraving %></p>
-                <span><%= element.character %></span>
-                <form action="/dashboard/deleteStone/<%= element._id %>?_method=DELETE" method="POST">
-                    <button type="submit">Delete</button>
-                </form>
+    <!-- All View-->
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full">
+                <thead class="bg-gray-200 border-b">
+                  <tr>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left"></th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Type</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Rarity</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Quality</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Primary Stats</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Secondary Stats</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Engraving 1</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Engraving 2</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Negative Engraving</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">Character Name</th>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <% accessory.forEach(element => { %>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.accType %></td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= element.accRarity %></td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= element.accQuality %></td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= element.statsOne %> +<%= element.statsOneValue %></td>
+                            <% if(element.accType === "Necklace"){ %>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= element.statsTwo %> +<%= element.statsTwoValue %></td>
+                            <% }else{ %>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">None</td>
+                            <% } %>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingOne %> +<%= element.engravingOneNode %></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingTwo %> +<%= element.engravingTwoNode %></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %> +<%= element.negativeNode %></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
+                                    <button type="submit">Delete</button>
+                                </form>
+                            </td>
+                          </tr>
+                        <% }) %>
+                        <% stone.forEach(element => { %>
+                            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Stone</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingOne %></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingTwo %></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <form action="/dashboard/deleteStone/<%= element._id %>?_method=DELETE" method="POST">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                </tbody>
+              </table>
             </div>
-        <% }) %>
-    </div>
+          </div>
+        </div>
+      </div>
 </div>
+
+    <!-- Ring View -->
+    <div>
+
+    </div>
+    <!-- Earring View -->
+    <div>
+
+    </div>
+    <!-- Necklace View -->
+    <div>
+
+    </div>
+    <!-- Stone View -->
 </div>
 <%- include("partials/footer") %>
