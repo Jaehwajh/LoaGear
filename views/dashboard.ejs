@@ -1,6 +1,26 @@
 <%- include("partials/header") -%>
-<div class="body">
+<div class="body bg-zinc-900 h-screen">
 <div>
+    <!-- navbar -->
+    <div>
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+              <div class="relative flex h-16 items-center justify-between">
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                  <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+                      <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Gear Inventory</a>
+                      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Raid Gold</a>
+                      <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a> -->
+                      <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
     <!-- Add accessory -->
     <div class="flex flex-row">
         <div>
@@ -115,50 +135,59 @@
             </form>
         </div>
         <!-- Add stone -->
-        <div>
-            <form action="/dashboard/createStone" method="POST">
-                <!-- First Engraving -->
-                <div class="flex-column">
-                    <div>
-                    <label for="engravingOne">Engraving 1</label>
-                    <select class="select roster-select" name="engravingOne" id="engravingOne">
-                        <% bEngravings.forEach(element => { %>
-                            <option value="<%- element %>"><%- element %></option>
-                        <% }); %>
-                    </select>
+        <div class="flex items-center justify-center p-12">
+            <div class="mx-auto w-full max-w-[550px]">
+              <form action="/dashboard/createStone" method="POST">
+                <div class="mb-5">
+                  <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
+                    Engraving 1
+                  </label>
+                  <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
+                    <% bEngravings.forEach(element => { %>
+                        <option value="<%- element %>"><%- element %></option>
+                    <% }); %>
+                </select>
                 </div>
-                <!-- Second Engraving -->
-                <div class="flex-column">
-                    <div>
-                    <label for="engravingTwo">Engraving 2</label>
-                    <select class="select roster-select" name="engravingTwo" id="engravingTwo">
-                        <% bEngravings.forEach(element => { %>
-                            <option value="<%- element %>"><%- element %></option>
-                        <% }); %>
-                    </select>
-                    </div>
-                </div>
-                <!-- Negative Engravings -->
-                <div class="flex-column">
-                    <div>
-                    <label for="negativeEngraving">Negative Engraving</label>
-                    <select class="select roster-select" name="negativeEngraving" id="negativeEngraving">
-                        <% nEngravings.forEach(element => { %>
-                            <option value="<%- element %>"><%- element %></option>
-                        <% }); %>
-                    </select>
-                    </div>
-                </div>
-                <!-- Character Name -->
-                <div class="flex-column">
-                    <label for="character">Character Name</label>
-                    <input class="input" type="text" name="character" id="character" placeholder="">
-                </div>
+                <div class="mb-5">
+                    <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
+                      Engraving 2
+                    </label>
+                    <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
+                      <% bEngravings.forEach(element => { %>
+                          <option value="<%- element %>"><%- element %></option>
+                      <% }); %>
+                  </select>
+                  </div>
+                  <div class="mb-5">
+                    <label for="negativeEngraving" class="mb-3 block text-base font-medium text-[#07074D]">
+                      Negative Engraving
+                    </label>
+                    <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="negativeEngraving" id="negativeEngraving">
+                      <% nEngravings.forEach(element => { %>
+                          <option value="<%- element %>"><%- element %></option>
+                      <% }); %>
+                  </select>
+                  </div>
+                  <div class="mb-5">
+                    <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                      Character Name
+                    </label>
+                    <input
+                      type="text"
+                      name="character"
+                      id="character"
+                      placeholder=""
+                      class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                    />
+                  </div>
                 <div>
-                    <button class="custom-btn" type="submit">Add</button>
+                  <button class="hover:shadow-form rounded-md bg-gray-800 py-3 px-8 text-base font-semibold text-white outline-none">
+                    Submit
+                  </button>
                 </div>
-            </form>
-        </div>
+              </form>
+            </div>
+          </div>
         <!-- Add bracelet -->
         <div>
             <form action="">
