@@ -147,35 +147,35 @@
                 />
               </div>
               <div class="mb-5">
-                <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
-                  Engraving 2
+                <label for="negativeEngraving" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Negative Engraving
                 </label>
-                <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
-                  <% bEngravings.forEach(element => { %>
+                <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="negativeEngraving" id="negativeEngraving">
+                  <% nEngravings.forEach(element => { %>
                       <option value="<%- element %>"><%- element %></option>
                   <% }); %>
               </select>
               </div>
               <div class="mb-5">
-                <label for="engravingTwoNode" class="mb-3 block text-base font-medium text-[#07074D]">
+                <label for="negativeNode" class="mb-3 block text-base font-medium text-[#07074D]">
                   Value
                 </label>
                 <input
                   type="text"
-                  name="engravingTwoNode"
-                  id="engravingTwoNode"
+                  name="negativeNode"
+                  id="negativeNode"
                   placeholder=""
                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
               </div>
               <div class="mb-5">
-                <label for="accQuality" class="mb-3 block text-base font-medium text-[#07074D]">
-                  Quality
+                <label for="character" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Character Name
                 </label>
                 <input
                   type="text"
-                  name="accQuality"
-                  id="accQuality"
+                  name="character"
+                  id="character"
                   placeholder=""
                   class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                 />
