@@ -22,7 +22,7 @@
             </div>
     </div>
     <!-- Add accessory -->
-    <div class="flex items-center justify-center p-12">
+    <div class="flex items-center justify-center p-12 hidden">
         <div class="mx-auto w-full max-w-[550px]">
           <form action="/dashboard/createStone" method="POST">
             <div class="mb-5">
@@ -128,7 +128,7 @@
                 <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
                   Engraving 2
                 </label>
-                <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
+                <select class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
                   <% bEngravings.forEach(element => { %>
                       <option value="<%- element %>"><%- element %></option>
                   <% }); %>
@@ -189,7 +189,7 @@
         </div>
       </div>
         <!-- Add stone -->
-        <div class="flex items-center justify-center p-12">
+        <div class="flex items-center justify-center p-12 hidden">
             <div class="mx-auto w-full max-w-[550px]">
               <form action="/dashboard/createStone" method="POST">
                 <div class="mb-5">
