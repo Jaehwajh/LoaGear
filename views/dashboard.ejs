@@ -369,25 +369,6 @@
                       </td>
                   </tr>
               <% }) %>
-              <% stone.forEach(element => { %>
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Stone</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Relic</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingOne %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingTwo %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <form action="/dashboard/deleteStone/<%= element._id %>?_method=DELETE" method="POST">
-                              <button type="submit">Delete</button>
-                          </form>
-                      </td>
-                  </tr>
-              <% }) %>    
               </tbody>
             </table>
           </div>
@@ -439,25 +420,6 @@
                       </td>
                   </tr>
               <% }) %>
-              <% stone.forEach(element => { %>
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Stone</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Relic</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingOne %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingTwo %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <form action="/dashboard/deleteStone/<%= element._id %>?_method=DELETE" method="POST">
-                              <button type="submit">Delete</button>
-                          </form>
-                      </td>
-                  </tr>
-              <% }) %>    
               </tbody>
             </table>
           </div>
@@ -509,25 +471,6 @@
                       </td>
                   </tr>
               <% }) %>
-              <% stone.forEach(element => { %>
-                  <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Stone</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Relic</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">N/a</td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingOne %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.engravingTwo %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <form action="/dashboard/deleteStone/<%= element._id %>?_method=DELETE" method="POST">
-                              <button type="submit">Delete</button>
-                          </form>
-                      </td>
-                  </tr>
-              <% }) %>    
               </tbody>
             </table>
           </div>
