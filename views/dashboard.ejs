@@ -1,5 +1,5 @@
 <%- include("partials/header") -%>
-<div class="body bg-zinc-900 h-screen">
+<div class="body bg-zinc-900">
 <div>
     <!-- navbar -->
     <div>
@@ -22,8 +22,8 @@
             </div>
     </div>
     <!-- Add accessory -->
-    <div class="flex items-center justify-center p-12 hidden">
-        <div class="mx-auto w-full max-w-[550px]">
+    <div class="flex items-center justify-center z-10">
+        <div class="mx-auto max-w-[550px]">
           <form action="/dashboard/createAccessory" method="POST">
             <div class="flex">
               <div class="mb-5">
@@ -36,7 +36,7 @@
                   <% }); %>
                 </select>
               </div>
-              <div class="mb-5 px-8">
+              <div class="mb-5 px-4">
                   <label for="accRarity" class="mb-3 block text-base font-medium text-[#07074D]">
                     Rarity
                   </label>
@@ -65,7 +65,7 @@
                   <label for="statsOne" class="mb-3 block text-base font-medium text-[#07074D]">
                     Stats 1
                   </label>
-                  <select class="w-48 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsOne" id="statsOne">
+                  <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsOne" id="statsOne">
                       <% stats.forEach(element => { %>
                           <option value="<%- element %>"><%- element %></option>
                       <% }); %>
@@ -90,7 +90,7 @@
                   <label for="statsTwo" class="mb-3 block text-base font-medium text-[#07074D]">
                     Stats 2
                   </label>
-                  <select class="w-48 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsTwo" id="statsTwo">
+                  <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsTwo" id="statsTwo">
                       <option value="None">None</option>
                   <% stats.forEach(element => { %>
                       <option value="<%- element %>"><%- element %></option>
@@ -208,7 +208,7 @@
       </div>
       
         <!-- Add stone -->
-        <div class="flex items-center justify-center p-12">
+        <div class="flex items-center justify-center hidden">
             <div class="mx-auto w-full max-w-[550px]">
               <form action="/dashboard/createStone" method="POST">
                 <div class="mb-5">
