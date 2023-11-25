@@ -13,8 +13,6 @@
                       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
                       <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Gear Inventory</a>
                       <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Raid Gold</a>
-                      <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a> -->
-                      <!-- <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a> -->
                     </div>
                   </div>
                 </div>
@@ -22,8 +20,8 @@
             </div>
     </div>
     <!-- Add accessory -->
-    <div class="flex items-center justify-center z-10">
-        <div class="mx-auto max-w-[550px]">
+    <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="modal">
+        <div class="mx-auto max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
           <form action="/dashboard/createAccessory" method="POST">
             <div class="flex">
               <div class="mb-5">
@@ -204,12 +202,19 @@
               </button>
             </div>
           </form>
+          <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
+            <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
         </div>
       </div>
       
         <!-- Add stone -->
-        <div class="flex items-center justify-center hidden">
-            <div class="mx-auto w-full max-w-[550px]">
+        <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="modal">
+            <div class="mx-auto w-full max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
               <form action="/dashboard/createStone" method="POST">
                 <div class="mb-5">
                   <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
@@ -259,6 +264,13 @@
                   </button>
                 </div>
               </form>
+              <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
+                <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
             </div>
           </div>
         <!-- Add bracelet -->
