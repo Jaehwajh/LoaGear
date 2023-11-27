@@ -28,3 +28,49 @@ function fadeIn(el, display) {
     })();
 }
 
+
+const earring = document.getElementById('earring');
+const all = document.getElementById('all');
+const ring = document.getElementById('ring');
+const necklace = document.getElementById('necklace');
+const stone = document.getElementById('stone');
+
+function showAll() {
+    all.style.display = "none";
+
+    if(all.style.display === "none"){
+        all.style.display = "block"
+        current.style.display = "none"
+        completed.style.display = "none"
+    }else {
+        all.style.display = "none"
+        current.style.display = "block"
+        completed.style.display ="none"
+    }
+};
+
+function showCompleted(){
+    completed.style.display = "none"
+    if(completed.style.display === "none"){
+        all.style.display = "none"
+        current.style.display = "none"
+        completed.style.display = "block"
+    }else {
+        all.style.display = "none"
+        current.style.display = "block"
+        completed.style.display ="none"
+    }
+};
+
+function showCurrent(){
+    current.style.display === "none"
+    if(current.style.display === "none"){
+        all.style.display = "none"
+        current.style.display = "block"
+        completed.style.display = "none"
+    }else {
+        all.style.display = "none"
+        current.style.display = "block"
+        completed.style.display ="none"
+    }
+};
