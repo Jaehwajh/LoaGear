@@ -19,270 +19,42 @@
               </div>
             </div>
     </div>
-    <!-- Add accessory -->
-    <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="modal">
-        <div class="mx-auto max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
-          <form action="/dashboard/createAccessory" method="POST">
-            <div class="flex">
-              <div class="mb-5">
-                <label for="accType" class="mb-3 block text-base font-medium text-[#07074D]">
-                  Accessory
-                </label>
-                <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="accType" id="accType">
-                  <% types.forEach(element => { %>
-                      <option value="<%- element %>"><%- element %></option>
-                  <% }); %>
-                </select>
-              </div>
-              <div class="mb-5 px-4">
-                  <label for="accRarity" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Rarity
-                  </label>
-                  <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="accRarity" id="accRarity">
-                      <% rarities.forEach(element => { %>
-                          <option value="<%- element %>"><%- element %></option>
-                      <% }); %>
-                  </select>
-                </div>
-                <div class="mb-5">
-                  <label for="accQuality" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Quality
-                  </label>
-                  <input
-                    type="text"
-                    name="accQuality"
-                    id="accQuality"
-                    placeholder=""
-                    class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                  />
-                </div>  
-            </div>
-
-              <div class="flex">
-                <div class="mb-5">
-                  <label for="statsOne" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Stats 1
-                  </label>
-                  <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsOne" id="statsOne">
-                      <% stats.forEach(element => { %>
-                          <option value="<%- element %>"><%- element %></option>
-                      <% }); %>
-                  </select>
-                </div>
-                <div class="mb-5 px-4">
-                  <label for="statsOneValue" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Value
-                  </label>
-                  <input
-                    type="text"
-                    name="statsOneValue"
-                    id="statsOneValue"
-                    placeholder=""
-                    class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                  />
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="mb-5">
-                  <label for="statsTwo" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Stats 2
-                  </label>
-                  <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsTwo" id="statsTwo">
-                      <option value="None">None</option>
-                  <% stats.forEach(element => { %>
-                      <option value="<%- element %>"><%- element %></option>
-                  <% }); %>
-                </select>
-                </div>
-                <div class="mb-5 px-4">
-                  <label for="statsTwoValue" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Value
-                  </label>
-                  <input
-                    type="text"
-                    name="statsTwoValue"
-                    id="statsTwoValue"
-                    placeholder=""
-                    class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                  />
-                </div>
-              </div>
-
-              <div class="flex">
-                <div class="mb-5">
-                  <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Engraving 1
-                  </label>
-                  <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
-                    <% firstEngraving.forEach(element => { %>
-                        <option value="<%- element %>"><%- element %></option>
-                    <% }); %>
-                </select>
-                </div>
-                <div class="mb-5 px-4">
-                  <label for="engravingOneNode" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Value
-                  </label>
-                  <input
-                    type="text"
-                    name="engravingOneNode"
-                    id="engravingOneNode"
-                    placeholder=""
-                    class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                  />
-                </div>
-              </div>
-
-             <div class="flex">
-              <div class="mb-5">
-                <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
-                  Engraving 2
-                </label>
-                <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
-                  <% bEngravings.forEach(element => { %>
-                      <option value="<%- element %>"><%- element %></option>
-                  <% }); %>
-              </select>
-              </div>
-              <div class="mb-5 px-4">
-                <label for="engravingTwoNode" class="mb-3 block text-base font-medium text-[#07074D]">
-                  Value
-                </label>
-                <input
-                  type="text"
-                  name="engravingTwoNode"
-                  id="engravingTwoNode"
-                  placeholder=""
-                  class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                />
-              </div>
-             </div>
-             
-              <div class="flex">
-                <div class="mb-5">
-                  <label for="negativeEngraving" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Negative Engraving
-                  </label>
-                  <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="negativeEngraving" id="negativeEngraving">
-                    <% nEngravings.forEach(element => { %>
-                        <option value="<%- element %>"><%- element %></option>
-                    <% }); %>
-                </select>
-                </div>
-                <div class="mb-5 px-4">
-                  <label for="negativeNode" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Value
-                  </label>
-                  <input
-                    type="text"
-                    name="negativeNode"
-                    id="negativeNode"
-                    placeholder=""
-                    class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                  />
-                </div>
-              </div>
-
-              <div class="mb-5">
-                <label for="character" class="mb-3 block text-base font-medium text-[#07074D]">
-                  Character Name
-                </label>
-                <input
-                  type="text"
-                  name="character"
-                  id="character"
-                  placeholder=""
-                  class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                />
-              </div>
-            <div>
-              <button class="hover:shadow-form rounded-md bg-gray-800 py-3 px-8 text-base font-semibold text-white outline-none">
-                Submit
-              </button>
-            </div>
-          </form>
-          <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
-            <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" />
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-        </button>
-        </div>
-      </div>
-      
-        <!-- Add stone -->
-        <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="modal">
-            <div class="mx-auto w-full max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
-              <form action="/dashboard/createStone" method="POST">
-                <div class="mb-5">
-                  <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
-                    Engraving 1
-                  </label>
-                  <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
-                    <% bEngravings.forEach(element => { %>
-                        <option value="<%- element %>"><%- element %></option>
-                    <% }); %>
-                </select>
-                </div>
-                <div class="mb-5">
-                    <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
-                      Engraving 2
-                    </label>
-                    <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
-                      <% bEngravings.forEach(element => { %>
-                          <option value="<%- element %>"><%- element %></option>
-                      <% }); %>
-                  </select>
-                  </div>
-                  <div class="mb-5">
-                    <label for="negativeEngraving" class="mb-3 block text-base font-medium text-[#07074D]">
-                      Negative Engraving
-                    </label>
-                    <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="negativeEngraving" id="negativeEngraving">
-                      <% nEngravings.forEach(element => { %>
-                          <option value="<%- element %>"><%- element %></option>
-                      <% }); %>
-                  </select>
-                  </div>
-                  <div class="mb-5">
-                    <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
-                      Character Name
-                    </label>
-                    <input
-                      type="text"
-                      name="character"
-                      id="character"
-                      placeholder=""
-                      class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                    />
-                  </div>
-                <div>
-                  <button class="hover:shadow-form rounded-md bg-gray-800 py-3 px-8 text-base font-semibold text-white outline-none">
-                    Submit
-                  </button>
-                </div>
-              </form>
-              <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
-                <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" />
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-            </div>
-          </div>
-        <!-- Add bracelet -->
-        <div>
-            <form action="">
-    
-            </form>
-        </div>
-    </div>
 </div>
 <!-- Display Accessories, stones, bracelets -->
 <div>
+  <div class="bg-white dark:bg-gray-900  py-4 md:py-7 px-4 md:px-8 xl:px-10 rounded-md pb-10">
+    <div class="sm:flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="ml-4 sm:ml-8">
+            <button class="mx-2 my-2 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-200 px-8 py-3 focus:outline-none focus:ring-1 focus:ring-offset-1" onclick="showAll()">
+                    <p>All</p>
+              </button>
+          </div>
+          <div class=" ml-4 sm:ml-8">
+            <button class="mx-2 my-2 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-200 px-8 py-3 focus:outline-none focus:ring-1 focus:ring-offset-1" onclick="showRing()">
+                    <p>Rings</p>
+              </button>
+          </div>
+          <div class="ml-4 sm:ml-8">
+            <button class="mx-2 my-2 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-200 px-8 py-3 focus:outline-none focus:ring-1 focus:ring-offset-1"  onclick="showEarring()">
+                    <p>Earrings</p>
+              </button>
+          </div>
+          <div class="ml-4 sm:ml-8">
+            <button class="mx-2 my-2 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-200 px-8 py-3 focus:outline-none focus:ring-1 focus:ring-offset-1" onclick="showNecklace()">
+                    <p>Necklace</p>
+              </button>
+          </div>
+          <div class="ml-4 sm:ml-8">
+            <button class="mx-2 my-2 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-200 px-8 py-3 focus:outline-none focus:ring-1 focus:ring-offset-1" onclick="showStone()">
+                    <p>Stone</p>
+              </button>
+          </div>
+        </div>
+        <button onclick="modalHandler(true)" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+            <p class="text-sm font-medium leading-none text-white">Add Item</p>
+        </button>
+  </div>
     <!-- All View-->
     <div class="flex flex-col" id="all">
         <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
@@ -352,9 +124,7 @@
             </div>
           </div>
         </div>
-      </div>
-</div>
-
+    </div>
     <!-- Ring View -->
     <div class="flex flex-col hidden" id="ring">
       <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
@@ -559,7 +329,265 @@
               </table>
             </div>
           </div>
+        </div>  
+    </div>
+  </div>
+</div>
+
+ <!-- Add accessory -->
+<div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="modal">
+  <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0">
+    <div class="mx-auto max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
+      <form action="/dashboard/createAccessory" method="POST">
+        <div class="flex">
+          <div class="mb-5">
+            <label for="accType" class="mb-3 block text-base font-medium text-[#07074D]">
+              Accessory
+            </label>
+            <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="accType" id="accType">
+              <% types.forEach(element => { %>
+                  <option value="<%- element %>"><%- element %></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="mb-5 px-4">
+              <label for="accRarity" class="mb-3 block text-base font-medium text-[#07074D]">
+                Rarity
+              </label>
+              <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="accRarity" id="accRarity">
+                  <% rarities.forEach(element => { %>
+                      <option value="<%- element %>"><%- element %></option>
+                  <% }); %>
+              </select>
+            </div>
+            <div class="mb-5">
+              <label for="accQuality" class="mb-3 block text-base font-medium text-[#07074D]">
+                Quality
+              </label>
+              <input
+                type="text"
+                name="accQuality"
+                id="accQuality"
+                placeholder=""
+                class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+            </div>  
         </div>
-      </div>
+  
+          <div class="flex">
+            <div class="mb-5">
+              <label for="statsOne" class="mb-3 block text-base font-medium text-[#07074D]">
+                Stats 1
+              </label>
+              <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsOne" id="statsOne">
+                  <% stats.forEach(element => { %>
+                      <option value="<%- element %>"><%- element %></option>
+                  <% }); %>
+              </select>
+            </div>
+            <div class="mb-5 px-4">
+              <label for="statsOneValue" class="mb-3 block text-base font-medium text-[#07074D]">
+                Value
+              </label>
+              <input
+                type="text"
+                name="statsOneValue"
+                id="statsOneValue"
+                placeholder=""
+                class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+            </div>
+          </div>
+  
+          <div class="flex">
+            <div class="mb-5">
+              <label for="statsTwo" class="mb-3 block text-base font-medium text-[#07074D]">
+                Stats 2
+              </label>
+              <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsTwo" id="statsTwo">
+                  <option value="None">None</option>
+              <% stats.forEach(element => { %>
+                  <option value="<%- element %>"><%- element %></option>
+              <% }); %>
+            </select>
+            </div>
+            <div class="mb-5 px-4">
+              <label for="statsTwoValue" class="mb-3 block text-base font-medium text-[#07074D]">
+                Value
+              </label>
+              <input
+                type="text"
+                name="statsTwoValue"
+                id="statsTwoValue"
+                placeholder=""
+                class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+            </div>
+          </div>
+  
+          <div class="flex">
+            <div class="mb-5">
+              <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
+                Engraving 1
+              </label>
+              <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
+                <% firstEngraving.forEach(element => { %>
+                    <option value="<%- element %>"><%- element %></option>
+                <% }); %>
+            </select>
+            </div>
+            <div class="mb-5 px-4">
+              <label for="engravingOneNode" class="mb-3 block text-base font-medium text-[#07074D]">
+                Value
+              </label>
+              <input
+                type="text"
+                name="engravingOneNode"
+                id="engravingOneNode"
+                placeholder=""
+                class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+            </div>
+          </div>
+  
+         <div class="flex">
+          <div class="mb-5">
+            <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
+              Engraving 2
+            </label>
+            <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
+              <% bEngravings.forEach(element => { %>
+                  <option value="<%- element %>"><%- element %></option>
+              <% }); %>
+          </select>
+          </div>
+          <div class="mb-5 px-4">
+            <label for="engravingTwoNode" class="mb-3 block text-base font-medium text-[#07074D]">
+              Value
+            </label>
+            <input
+              type="text"
+              name="engravingTwoNode"
+              id="engravingTwoNode"
+              placeholder=""
+              class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+         </div>
+         
+          <div class="flex">
+            <div class="mb-5">
+              <label for="negativeEngraving" class="mb-3 block text-base font-medium text-[#07074D]">
+                Negative Engraving
+              </label>
+              <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="negativeEngraving" id="negativeEngraving">
+                <% nEngravings.forEach(element => { %>
+                    <option value="<%- element %>"><%- element %></option>
+                <% }); %>
+            </select>
+            </div>
+            <div class="mb-5 px-4">
+              <label for="negativeNode" class="mb-3 block text-base font-medium text-[#07074D]">
+                Value
+              </label>
+              <input
+                type="text"
+                name="negativeNode"
+                id="negativeNode"
+                placeholder=""
+                class="w-20 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+            </div>
+          </div>
+  
+          <div class="mb-5">
+            <label for="character" class="mb-3 block text-base font-medium text-[#07074D]">
+              Character Name
+            </label>
+            <input
+              type="text"
+              name="character"
+              id="character"
+              placeholder=""
+              class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        <div>
+          <button class="hover:shadow-form rounded-md bg-gray-800 py-3 px-8 text-base font-semibold text-white outline-none">
+            Submit
+          </button>
+        </div>
+      </form>
+      <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
+        <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+    </button>
+    </div>
+  </div>
+  
+    <!-- Add stone -->
+  <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0">
+        <div class="mx-auto w-full max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
+          <form action="/dashboard/createStone" method="POST">
+            <div class="mb-5">
+              <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
+                Engraving 1
+              </label>
+              <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
+                <% bEngravings.forEach(element => { %>
+                    <option value="<%- element %>"><%- element %></option>
+                <% }); %>
+            </select>
+            </div>
+            <div class="mb-5">
+                <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Engraving 2
+                </label>
+                <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
+                  <% bEngravings.forEach(element => { %>
+                      <option value="<%- element %>"><%- element %></option>
+                  <% }); %>
+              </select>
+              </div>
+              <div class="mb-5">
+                <label for="negativeEngraving" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Negative Engraving
+                </label>
+                <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="negativeEngraving" id="negativeEngraving">
+                  <% nEngravings.forEach(element => { %>
+                      <option value="<%- element %>"><%- element %></option>
+                  <% }); %>
+              </select>
+              </div>
+              <div class="mb-5">
+                <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Character Name
+                </label>
+                <input
+                  type="text"
+                  name="character"
+                  id="character"
+                  placeholder=""
+                  class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+                />
+              </div>
+            <div>
+              <button class="hover:shadow-form rounded-md bg-gray-800 py-3 px-8 text-base font-semibold text-white outline-none">
+                Submit
+              </button>
+            </div>
+          </form>
+          <button class="cursor-pointer absolute top-0 right-0 mt-4 mr-5 text-gray-400 hover:text-gray-600 transition duration-150 ease-in-out rounded focus:ring-2 focus:outline-none focus:ring-gray-600" onclick="modalHandler()" aria-label="close modal" role="button">
+            <svg  xmlns="http://www.w3.org/2000/svg"  class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+        </button>
+        </div>
+  </div>
 </div>
 <%- include("partials/footer") %>
