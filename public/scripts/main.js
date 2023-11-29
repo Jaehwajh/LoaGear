@@ -39,14 +39,14 @@ function showAll() {
     all.style.display = "none";
 
     if(all.style.display === "none"){
-        all.style.display = "block";
+        all.style.display = "flex";
         earring.style.display = "none";
         ring.style.display = "none";
         necklace.style.display = "none";
         stone.style.display = "none";
     }else {
         all.style.display = "none";
-        earring.style.display = "block";
+        earring.style.display = "flex";
         ring.style.display ="none";
         necklace.style.display = "none";
         stone.style.display = "none";
@@ -58,14 +58,14 @@ function showEarring(){
 
     if(earring.style.display === "none"){
         all.style.display = "none";
-        earring.style.display = "block";
+        earring.style.display = "flex";
         ring.style.display = "none";
         necklace.style.display = "none";
         stone.style.display = "none";
     }else {
         all.style.display = "none";
         earring.style.display = "none";
-        ring.style.display ="block";
+        ring.style.display ="flex";
         necklace.style.display = "none";
         stone.style.display = "none";
     };
@@ -77,14 +77,14 @@ function showRing(){
     if(ring.style.display === "none"){
         all.style.display = "none";
         earring.style.display = "none";
-        ring.style.display = "block";
+        ring.style.display = "flex";
         necklace.style.display = "none";
         stone.style.display = "none";
     }else {
         all.style.display = "none";
         earring.style.display = "none";
         ring.style.display ="none";
-        necklace.style.display = "block";
+        necklace.style.display = "flex";
         stone.style.display = "none";
     };
 };
@@ -96,14 +96,14 @@ function showNecklace(){
         all.style.display = "none";
         earring.style.display = "none";
         ring.style.display = "none";
-        necklace.style.display = "block";
+        necklace.style.display = "flex";
         stone.style.display = "none";
     }else {
         all.style.display = "none";
         earring.style.display = "none";
         ring.style.display = "none";
         necklace.style.display = "none";
-        stone.style.display = "block";
+        stone.style.display = "flex";
     }
 };
 
@@ -115,9 +115,9 @@ function showStone(){
         earring.style.display = "none";
         ring.style.display = "none";
         necklace.style.display = "none";
-        stone.style.display = "block";
+        stone.style.display = "flex";
     }else {
-        all.style.display = "block";
+        all.style.display = "flex";
         earring.style.display = "none";
         ring.style.display = "none";
         necklace.style.display = "none";

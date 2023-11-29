@@ -21,7 +21,7 @@
     </div>
 </div>
 <!-- Display Accessories, stones, bracelets -->
-<div>
+<div class="max-h-full">
   <div class="bg-white dark:bg-gray-900  py-4 md:py-7 px-4 md:px-8 xl:px-10 rounded-md pb-10">
     <div class="sm:flex items-center justify-between">
         <div class="flex items-center">
@@ -51,7 +51,7 @@
               </button>
           </div>
         </div>
-        <button onclick="modalHandler(true)" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
+        <button onclick="modalHandler(true)" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-3 mx-8  bg-indigo-700 hover:bg-indigo-600 focus:outline-none rounded">
             <p class="text-sm font-medium leading-none text-white">Add Item</p>
         </button>
   </div>
@@ -95,7 +95,7 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                             <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
-                                <button type="submit">Delete</button>
+                                <button class="mx-1 my-1 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-600 px-4 py-1 focus:outline-none focus:ring-1 focus:ring-offset-1" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
@@ -165,9 +165,9 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %> +<%= element.negativeNode %></td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
-                              <button type="submit">Delete</button>
-                          </form>
+                        <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
+                          <button class="mx-1 my-1 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-600 px-4 py-1 focus:outline-none focus:ring-1 focus:ring-offset-1" type="submit">Delete</button>
+                      </form>
                       </td>
                   </tr>
                   <% } %>
@@ -218,9 +218,9 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %> +<%= element.negativeNode %></td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
-                              <button type="submit">Delete</button>
-                          </form>
+                        <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
+                          <button class="mx-1 my-1 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-600 px-4 py-1 focus:outline-none focus:ring-1 focus:ring-offset-1" type="submit">Delete</button>
+                      </form>
                       </td>
                   </tr>
                   <% } %>
@@ -271,9 +271,9 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.negativeEngraving %> +<%= element.negativeNode %></td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= element.character %></td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
-                              <button type="submit">Delete</button>
-                          </form>
+                        <form action="/dashboard/deleteAccessories/<%= element._id %>?_method=DELETE" method="POST">
+                          <button class="mx-1 my-1 transition duration-150 ease-in-out hover:bg-indigo-100 hover:text-indigo-700 rounded-full text-gray-600 dark:text-gray-600 px-4 py-1 focus:outline-none focus:ring-1 focus:ring-offset-1" type="submit">Delete</button>
+                      </form>
                       </td>
                   </tr>
                   <% } %>
@@ -338,7 +338,7 @@
 <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden" id="modal">
   <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0">
     <div class="mx-auto max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
-      <form action="/dashboard/createAccessory" method="POST">
+      <form action="/dashboard/createAccessories" method="POST">
         <div class="flex">
           <div class="mb-5">
             <label for="accType" class="mb-3 block text-base font-medium text-[#07074D]">
@@ -379,7 +379,7 @@
               <label for="statsOne" class="mb-3 block text-base font-medium text-[#07074D]">
                 Stats 1
               </label>
-              <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsOne" id="statsOne">
+              <select class="w-44 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsOne" id="statsOne">
                   <% stats.forEach(element => { %>
                       <option value="<%- element %>"><%- element %></option>
                   <% }); %>
@@ -404,8 +404,8 @@
               <label for="statsTwo" class="mb-3 block text-base font-medium text-[#07074D]">
                 Stats 2
               </label>
-              <select class="w-40 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsTwo" id="statsTwo">
-                  <option value="None">None</option>
+              <select class="w-44 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="statsTwo" id="statsTwo">
+                  <option value="None">N/A</option>
               <% stats.forEach(element => { %>
                   <option value="<%- element %>"><%- element %></option>
               <% }); %>
@@ -509,7 +509,7 @@
               name="character"
               id="character"
               placeholder=""
-              class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              class="w-68 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
           </div>
         <div>
@@ -529,7 +529,7 @@
   </div>
   
     <!-- Add stone -->
-  <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0">
+  <div class="flex items-center justify-center z-10 absolute top-0 right-0 bottom-0 left-0 hidden">
         <div class="mx-auto w-full max-w-[550px] relative py-8 px-5 md:px-10 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-md rounded border border-gray-400">
           <form action="/dashboard/createStone" method="POST">
             <div class="mb-5">
