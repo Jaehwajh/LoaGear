@@ -123,57 +123,77 @@ function showStone(){
         necklace.style.display = "none";
         stone.style.display = "none";
     }
-};
+};  
 
 // Pagination Function
-
 document.addEventListener('DOMContentLoaded', function () {
-    const content = document.querySelector('.content'); 
+    const contentIds = ['all', 'ring', 'earring', 'necklace', 'stone']; // Replace with your IDs
     const itemsPerPage = 20;
-    let currentPage = 0;
-    const items = Array.from(content.getElementsByTagName('tr')).slice(1);
+    let currentPages = {};
+    const allItems = {};
   
-  function showPage(page) {
-    const startIndex = page * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    items.forEach((item, index) => {
-      item.classList.toggle('hidden', index < startIndex || index >= endIndex);
-    });
-    updateActiveButtonStates();
-  }
-  
-  function createPageButtons() {
-    const totalPages = Math.ceil(items.length / itemsPerPage);
-    const paginationContainer = document.createElement('div');
-    const paginationDiv = document.body.appendChild(paginationContainer);
-    paginationContainer.classList.add('pagination');
-  
-    // Add page buttons
-    for (let i = 0; i < totalPages; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i + 1;
-      pageButton.addEventListener('click', () => {
-        currentPage = i;
-        showPage(currentPage);
-        updateActiveButtonStates();
-      });
-  
-        content.appendChild(paginationContainer);
-        paginationDiv.appendChild(pageButton);
-      }
-  }
-  
-  function updateActiveButtonStates() {
-    const pageButtons = document.querySelectorAll('.pagination button');
-    pageButtons.forEach((button, index) => {
-      if (index === currentPage) {
-        button.classList.add('active');
+    contentIds.forEach(id => {
+      const content = document.getElementById(id);
+      if (content) {
+        const items = Array.from(content.getElementsByTagName('tr')).slice(1);
+        allItems[id] = items;
+        currentPages[id] = 0;
       } else {
-        button.classList.remove('active');
+        console.error(`Element with ID '${id}' not found.`);
       }
     });
-  }
   
-    createPageButtons(); // Call this function to create the page buttons initially
-    showPage(currentPage);
+    function showPage(page, contentId) {
+      const startIndex = page * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const items = allItems[contentId];
+  
+      items.forEach((item, index) => {
+        item.classList.toggle('hidden', index < startIndex || index >= endIndex);
+      });
+      updateActiveButtonStates(contentId);
+    }
+  
+    function createPageButtons(contentId) {
+      const items = allItems[contentId];
+      const totalPages = Math.ceil(items.length / itemsPerPage);
+      const content = document.getElementById(contentId);
+  
+      if (content) {
+        const paginationContainer = document.createElement('div');
+        const paginationDiv = content.appendChild(paginationContainer);
+        paginationContainer.classList.add('pagination');
+  
+        // Add page buttons
+        for (let i = 0; i < totalPages; i++) {
+          const pageButton = document.createElement('button');
+          pageButton.textContent = i + 1;
+          pageButton.addEventListener('click', () => {
+            currentPages[contentId] = i;
+            showPage(currentPages[contentId], contentId);
+            updateActiveButtonStates(contentId);
+          });
+  
+          paginationDiv.appendChild(pageButton);
+        }
+      } else {
+        console.error(`Element with ID '${contentId}' not found.`);
+      }
+    }
+  
+    function updateActiveButtonStates(contentId) {
+      const pageButtons = document.querySelectorAll(`#${contentId} .pagination button`);
+      pageButtons.forEach((button, index) => {
+        if (index === currentPages[contentId]) {
+          button.classList.add('active');
+        } else {
+          button.classList.remove('active');
+        }
+      });
+    }
+  
+    contentIds.forEach(id => {
+      createPageButtons(id); // Call this function to create the page buttons for each content
+      showPage(currentPages[id], id);
+    });
   });
