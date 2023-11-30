@@ -56,10 +56,10 @@
         </button>
   </div>
     <!-- All View-->
-    <div class="flex flex-col" id="all">
+    <div class="flex flex-col content" id="all">
         <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
           <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-            <div class="overflow-hidden">
+            <div class="overflow-hidden ">
               <table class="min-w-full">
                 <thead class="bg-gray-200 border-b">
                   <tr>
@@ -430,11 +430,13 @@
               <label for="engravingOne" class="mb-3 block text-base font-medium text-[#07074D]">
                 Engraving 1
               </label>
-              <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne">
-                <% firstEngraving.forEach(element => { %>
+              <input class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingOne" id="engravingOne" list="firstEngraving" placeholder="Engraving One">
+                <datalist id="firstEngraving">
+                  <% firstEngraving.forEach(element => { %>
                     <option value="<%- element %>"><%- element %></option>
-                <% }); %>
-            </select>
+                    <% }); %>
+                </datalist> 
+              </input>
             </div>
             <div class="mb-5 px-4">
               <label for="engravingOneNode" class="mb-3 block text-base font-medium text-[#07074D]">
@@ -455,11 +457,13 @@
             <label for="engravingTwo" class="mb-3 block text-base font-medium text-[#07074D]">
               Engraving 2
             </label>
-            <select class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo">
-              <% bEngravings.forEach(element => { %>
+            <input class="w-72 rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" name="engravingTwo" id="engravingTwo" list="bEngravings" placeholder="Engraving Two">
+              <datalist id="bEngravings">
+                <% bEngravings.forEach(element => { %>
                   <option value="<%- element %>"><%- element %></option>
               <% }); %>
-          </select>
+              </datalist>
+            </input>
           </div>
           <div class="mb-5 px-4">
             <label for="engravingTwoNode" class="mb-3 block text-base font-medium text-[#07074D]">
