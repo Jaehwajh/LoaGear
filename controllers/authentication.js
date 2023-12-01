@@ -6,7 +6,7 @@ exports.getLogin = (req, res) => {
     if(req.user) {
         return res.redirect("/dashboard"); //redirect to the dashboard
     }
-    res.render("signin", {
+    res.render("/signin", {
         title: "Login"
     });
 };
