@@ -28,7 +28,7 @@ function fadeIn(el, display) {
     })();
 }
 
-
+// Page Views
 const earring = document.getElementById('earring');
 const all = document.getElementById('all');
 const ring = document.getElementById('ring');
@@ -127,7 +127,7 @@ function showStone(){
 
 // Pagination Function
 document.addEventListener('DOMContentLoaded', function () {
-    const contentIds = ['all', 'ring', 'earring', 'necklace', 'stone']; // Replace with your IDs
+    const contentIds = ['all', 'ring', 'earring', 'necklace', 'stone'];
     const itemsPerPage = 20;
     let currentPages = {};
     const allItems = {};
@@ -191,9 +191,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
-  
+
     contentIds.forEach(id => {
-      createPageButtons(id); // Call this function to create the page buttons for each content
+      createPageButtons(id);
       showPage(currentPages[id], id);
     });
   });
+
+//   Quality Color Change
