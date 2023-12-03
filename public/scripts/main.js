@@ -128,7 +128,7 @@ function showStone(){
 // Pagination Function
 document.addEventListener('DOMContentLoaded', function () {
     const contentIds = ['all', 'ring', 'earring', 'necklace', 'stone'];
-    const itemsPerPage = 20;
+    const itemsPerPage = 10;
     let currentPages = {};
     const allItems = {};
   
@@ -198,4 +198,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-//   Quality Color Change
+// Menu open
+function openAccessory(){
+  
+}
+
+function openStone(){
+  
+}
