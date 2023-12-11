@@ -200,9 +200,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Menu open
 function openAccessory(){
+  const accMenu = document.getElementById("acc");
   
 }
 
 function openStone(){
-  
+  const stoneMenu = document.getElementById("rock");
+
 }
