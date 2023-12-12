@@ -1,4 +1,24 @@
+// Menu open
 let modal = document.getElementById("modal");
+let accMenu = document.getElementById("acc");
+let stoneMenu = document.getElementById("rock");
+
+function openAccessory(val) {
+    if (val) {
+        fadeIn(accMenu);
+    } else {
+        fadeOut(accMenu);
+    }
+}
+
+function openStone(val){
+    if (val) {
+        fadeIn(stoneMenu);
+    } else {
+        fadeOut(stoneMenu);
+    }
+}
+
 function modalHandler(val) {
     if (val) {
         fadeIn(modal);
@@ -198,13 +218,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-// Menu open
-function openAccessory(){
-  const accMenu = document.getElementById("acc");
-  
-}
-
-function openStone(){
-  const stoneMenu = document.getElementById("rock");
-
-}
