@@ -66,7 +66,7 @@ function showAll() {
         stone.style.display = "none";
     }else {
         all.style.display = "none";
-        earring.style.display = "flex";
+        earring.style.display = "none";
         ring.style.display ="none";
         necklace.style.display = "none";
         stone.style.display = "none";
@@ -85,7 +85,7 @@ function showEarring(){
     }else {
         all.style.display = "none";
         earring.style.display = "none";
-        ring.style.display ="flex";
+        ring.style.display ="none";
         necklace.style.display = "none";
         stone.style.display = "none";
     };
@@ -104,7 +104,7 @@ function showRing(){
         all.style.display = "none";
         earring.style.display = "none";
         ring.style.display ="none";
-        necklace.style.display = "flex";
+        necklace.style.display = "none";
         stone.style.display = "none";
     };
 };
@@ -123,7 +123,7 @@ function showNecklace(){
         earring.style.display = "none";
         ring.style.display = "none";
         necklace.style.display = "none";
-        stone.style.display = "flex";
+        stone.style.display = "none";
     }
 };
 
@@ -137,7 +137,7 @@ function showStone(){
         necklace.style.display = "none";
         stone.style.display = "flex";
     }else {
-        all.style.display = "flex";
+        all.style.display = "none";
         earring.style.display = "none";
         ring.style.display = "none";
         necklace.style.display = "none";
