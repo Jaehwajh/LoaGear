@@ -3,6 +3,8 @@
 <p>Keep track of all usuable accessories and stones in your entire roster.</p>
 <br>
 
+<img src="images/LOAgear.png" width="100%">
+
 ## A brief History
 <p>
 I play Lost Ark on a regular basis. Currently, as of writing this, I have almost 5k hours in the game (not really proud of that btw). However, playing this game made me realize that there was a lot of potential in making cool applications that can assist players in their adventures.
