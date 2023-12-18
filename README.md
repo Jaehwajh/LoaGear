@@ -3,7 +3,7 @@
 <p>Keep track of all usuable accessories and stones in your entire roster.</p>
 <br>
 
-<img src="images/LOAgear.png" width="100%">
+<img src="public/images/LOAgear.png" width="100%">
 
 ## A brief History
 <p>
