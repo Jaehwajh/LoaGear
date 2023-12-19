@@ -40,7 +40,9 @@ There are a lot of things I would've loved to have done differently with this ap
 
 # Future Implementations
 <p>
-As mention above this app was made using Node.js and EJS as a template language. Personally, I would've loved to use React for the frontend and NEXT.js for the backend. 
-  <br>
-Unfortunately, I'm still learning React and NEXT.js, and I felt like my insufficient knowledge would have hindered the development of this MVP. Plus, I have more experience with Express and EJS.
+- As mention above this app was made using Node.js and EJS as a template language. Personally, I would've loved to use React for the frontend and NEXT.js for the backend. 
+</p>
+<br>
+<p>
+- Unfortunately, I'm still learning React and NEXT.js, and I felt like my insufficient knowledge would have hindered the development of this MVP. Plus, I have more experience with Express and EJS.
 </p>
